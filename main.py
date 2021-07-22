@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, flash
 from random import choice
 from werkzeug.utils import secure_filename
-import sqlite3
-import random
+import sqlite3, random
+
 
 web_site = Flask(__name__)
 #https://pythonise.com/series/learning-flask/flask-configuration-files
