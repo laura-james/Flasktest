@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% block header %}
+<h1>{% block title %}Add User{% endblock %}</h1>
+{% endblock %} 
+{% block content %}
+
+		<form action="/addusertodb" method="POST">
+			<input type="text" placeholder="username" name="username" id="username"></input>
+      <input type="text" placeholder="password" name="password" id="password"></input>
+      <input type="text" placeholder="email" name="email"></input>
+      <input type="text" placeholder="firstname" name="firstname"></input>
+			<input type="submit" value="add this user"></input>
+		</form>
+    
+{% endblock %}

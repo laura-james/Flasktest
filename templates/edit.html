@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Edit User{% endblock %}</h1>
+{% endblock %} {% block content %}
+<form action="/edituser" method="post">
+	{% for u in user %} id: {{u['id']}}
+  <input name="id" id="id"  type="hidden" value="{{u['id']}}">
+	<div class="row">
+      <div class="input-field col s6">
+        <label for="username" class="active">Username:</label> 
+        <input name="username" id="username"  type="text" value="{{u['username']}}">
+      
+      </div>
+      <div class="input-field col s6">
+        <label for="password"  class="active">Password:</label>
+        <input name="password" id="password"  type="text" value="{{u['password']}}">
+      </div>
+    </div>
+    <div class="row"><div class="input-field col s12">
+   <label for="email"  class="active">Email:</label><input name="email" id="email" type="text" value="{{u['email_address']}}">
+    </div></div>
+    <div class="row"><div class="input-field col s12">
+    <label for="firstname"  class="active">First Name:</label><input name="firstname"  id="firstname" type="text" value="{{u['first_name']}}">
+    </div></div>
+    <div class="row"><div class="input-field col s12">
+   <label for="lastname"  class="active">Last Name:</label><input name="lastname" id="lastname"  type="text" value="{{u['last_name']}}">
+    </div></div>
+    <div class="row">
+      
+      <button class="btn waves-effect waves-light" type="submit" name="action">Save Changes
+      <i class="material-icons right small">send</i>
+      <i class="large material-icons">insert_chart</i>
+     </button>
+    </div>
+
+    {% endfor %}
+    </form>
+<ul>
+{% endblock %}

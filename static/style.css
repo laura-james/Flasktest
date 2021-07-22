@@ -1,0 +1,16 @@
+body{
+background-color:#ff88aa;
+}
+
+form input{background-color:white !important;}
+img {
+  width: 300px;
+  margin: 10px;
+}
+p span {
+  color: blue;
+}
+img.error{
+width:100%;
+max-width:300px
+}

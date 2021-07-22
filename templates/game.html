@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Guess the song{% endblock %}</h1>
+{% endblock %} 
+{% block content %}
+{% with messages = get_flashed_messages() %}             
+      {% endwith %} 
+<form action="/musicgame" method="post">
+	
+  <input name="answer" id="answer"  type="hidden" value="{{answer}}">
+	<div class="row">
+      <div class="input-field col s6">
+        <label for="username" class="active">Artist:</label> 
+        <input name="username" id="username"  type="text" readonly value="{{artist}}">
+      
+      </div>
+      <div class="input-field col s6">
+        <label for="password"  class="active">Password:</label>
+        <input name="password" id="password"  type="text" value="{{letters}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <label for="guess" class="active">Your answer:</label> 
+        <input name="guess" id="guess"  type="text"  placeholder="type your guess here">
+      
+      </div>
+     
+    </div>
+  
+    <div class="row">
+      
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit Answer
+     </button>
+    </div>
+
+    </form>
+<ul>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/ -->
+<html>
+<head>
+	<title>{% block title %}{% endblock %} - Mrs James Flask</title>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<main>
+			<nav>
+        <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav" class="right">
+         <li><a href="/">Home</a></li>
+        <li><a href="/allusers">All Users</a></li>
+        <li><a href="/adduser">Add User</a></li>
+        <li><a href="/play">Play Game</a></li>
+      </ul>
+    </div>
+  </nav>
+			
+
+ 
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+
+  </main>
+  </div>
+  </body>
+</html>

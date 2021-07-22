@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block header %}
+<h1>{% block title %}Amusing Page{% endblock %}</h1>
+{% endblock %} 
+{% block content %}
+		<p>Wait this isn't a page! Error {{code}}!</p>
+		<br />
+		<img src="https://http.cat/{{code}}" class="error">
+		<br />
+		<form action="/user/">
+			<input type="text" placeholder="username" name="username"></input>
+			<input type="submit" value="go to your shelter"></input>
+		</form>
+{% endblock %}

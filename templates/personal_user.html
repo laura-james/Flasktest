@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block header %}
+<h1>{% block title %}{{user}} Page{% endblock %}</h1>
+{% endblock %} 
+{% block content %}
+
+		<p>
+      Welcome to your personal page,
+      <span>{{user}}</span>.
+    </p>
+		<a href="/page">
+			<button>Another page?!</button>
+		</a>
+{% endblock %}

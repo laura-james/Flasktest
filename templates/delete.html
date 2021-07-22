@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Delete User{% endblock %}</h1>
+{% endblock %} {% block content %}
+<h2>Are you sure you want to delete this user?</h2>
+<form action="/deleteuser" method="post">
+	{% for u in user %} id: {{u['id']}}
+  <input name="id" id="id"  type="hidden" value="{{u['id']}}">
+	<div class="row">
+      <div class="input-field col s6">
+        <label for="username" class="active">Username:</label> 
+        <input name="username" id="username"  type="text" value="{{u['username']}}" readonly>
+      
+      </div>
+      <div class="input-field col s6">
+        <label for="password"  class="active">Password:</label>
+        <input name="password" id="password"  type="text" value="{{u['password']}}" readonly>
+      </div>
+    </div>
+  
+      
+      <button class="btn waves-effect waves-light" type="submit" name="action">Delete User    
+     </button>
+    </div>
+
+    {% endfor %}
+    </form>
+<ul>
+{% endblock %}

@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %} 
+{% block header %}
+<h1>{% block title %}All Users{% endblock %}</h1>
+{% endblock %} 
+{% with messages = get_flashed_messages(True) %}  
+         {% if messages %}  
+               {% for message in messages %}  
+                    <p>{{ message }}</p>  
+               {% endfor %}  
+         {% endif %}  
+      {% endwith %}  
+{% block content %}
+<table>
+		{% for user in users %}
+
+    <tr><td>{{user["id"]}}</td><td>{{user["username"]}}</td><td>{{user["password"]}}</td><td>{{user["email"]}}</td><td><a class ="btn waves-effect waves-light" href="/edit?id={{user[0]}}">edit</a></td><td><a class ="btn waves-effect waves-light" href="/delete?id={{user[0]}}">delete</a></td></tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

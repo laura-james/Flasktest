@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% block header %}
+<h2>{% block title %}Home{% endblock %}</h2>
+{% endblock %} 
+{% block content %}
+<form method="post">
+	<label for="username">Username</label>
+    <input name="username" id="username" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Register">
+</form>
+<form action="/user/">
+    <input type="text" placeholder="username" name="username"></input>
+    <input type="submit" value="go to your page"></input>
+</form>
+<h3>Upload an image!</h3>
+<form action = "/uploader" method = "POST" enctype = "multipart/form-data">
+    <input type = "file" name = "file" />
+    <input type = "submit"/>
+</form>  
+
+{% endblock %}
