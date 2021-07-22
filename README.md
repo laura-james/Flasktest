@@ -1,6 +1,7 @@
 # Mrs James Flask experiments
 ========
-I am practicing write Python for Web using Flask
+I am practicing writing Python for Web using Flask
+This project came from Created by @a5rocks | Start building dynamic web pages using a minimal Python server framework called Flask with templates and dynamic pages
 This seems the simplest way to do it
 This project
 * Uploads files
